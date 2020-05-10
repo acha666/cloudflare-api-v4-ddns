@@ -77,8 +77,11 @@ LOG_FILEV6="cf_ddns.log"
 ![](https://i.loli.net/2020/05/10/I2FOKQfpD9xkjlJ.png)
 ### 注意事项
 ~~1.不能同时存在两个记录名相同的记录(比如一个example.com的A记录和example.com的MX记录)，会发生错误~~已经修复这个蛋疼的问题，现在有100个也没问题（话说哪里来的100种类型的记录啊= =）
+
 2.脚本只在群晖DSM和Centos环境下测试，不过Ubuntu之类的也应该可以跑吧
+
 3.如果要使用IPv6模式，当然首先你要保证你能够正常访问IPv6网站啦~[测试一下吧](https://www.test-ipv6.com/ "当然是测试能不能访问IPv6网站啦")
-3.貌似没有了，因为我能发现的问题都修复完了
+
+4.貌似没有了，因为我能发现的问题都修复完了
 ### 要是有BUG怎么办？
 可以[前往我的Blog](https://acha666.cn/2020/05/10/%E4%BD%BF%E7%94%A8Cloudflare%E9%85%8D%E7%BD%AEIPV4%E5%92%8CIPV6%E7%9A%84%E5%8A%A8%E6%80%81DNS-DDNS "去我的博客看看吧")，给我留言就好，有人回复你时你会收到邮件提醒。或者你也可以选择[提交Issue](https://github.com/acha666/cloudflare-api-v4-ddns/issues "去Github提交Issue")，不过可能没那么快得到回复
