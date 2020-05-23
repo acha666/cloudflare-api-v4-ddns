@@ -163,9 +163,9 @@ else
     echo "正在更新ZoneID和RecordID"
 	log "[$IP_TYPE]正在更新ZoneID和RecordID"
     CFZONE_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=$CFZONE_NAME" -H "X-Auth-Email: $CFUSER" -H "X-Auth-Key: $CFKEY" -H "Content-Type: application/json" | grep -Po '(?<="id":")[^"]*' | head -1 )
-	#log "[$IP_TYPE]zoneid=$CFZONE_ID"
-    CFRECORD_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$CFZONE_ID/dns_records?name=$CFRECORD_NAME&type=$CFRECORD_TYPE" -H "X-Auth-Email: $CFUSER" -H "X-Auth-Key: $CFKEY" -H "Content-Type: application/json" | sed 's/,/\n/g' | grep "\"id\"" | sed 's/:/\n/g' | sed '1d' | sed 's/}//g' | sed 's/"//g'  | sed 's/ //g')
-	#log "[$IP_TYPE]recordid=$CFRECORD_ID"
+	log "[$IP_TYPE]zoneid=$CFZONE_ID"
+    CFRECORD_ID=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/$CFZONE_ID/dns_records?name=$CFRECORD_NAME&type=$CFRECORD_TYPE" -H "X-Auth-Email: $CFUSER" -H "X-Auth-Key: $CFKEY" -H "Content-Type: application/json" | grep -Po '(?<="id":")[^"]*' | head -1 )
+	log "[$IP_TYPE]recordid=$CFRECORD_ID"
     echo "$CFZONE_ID" > $ID_FILE
     echo "$CFRECORD_ID" >> $ID_FILE
     echo "$CFZONE_NAME" >> $ID_FILE
@@ -182,7 +182,7 @@ RESPONSE=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/$CFZONE_ID
   -H "Content-Type: application/json" \
   --data "{\"id\":\"$CFZONE_ID\",\"type\":\"$CFRECORD_TYPE\",\"name\":\"$CFRECORD_NAME\",\"content\":\"$WAN_IP\", \"ttl\":$CFTTL}")
 
-if [ "$RESPONSE" != "${RESPONSE%success*}" ] && [ "$(echo $RESPONSE | grep "\"success\": true")" != "" ]; then
+if [ "$RESPONSE" != "${RESPONSE%success*}" ] && [ "$(echo $RESPONSE | grep "\"success\":true")" != "" ]; then
   echo "成功！已将 $CFRECORD_NAME 的记录更新到 $WAN_IP"
   log "[$IP_TYPE]成功！已将 $CFRECORD_NAME 的记录更新到 $WAN_IP \n"
   #log "[$IP_TYPE][debug]Response:\n $RESPONSE"     #debug用
