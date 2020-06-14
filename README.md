@@ -39,17 +39,17 @@ CFTTL=120
 FORCE=false
 
 # 用于获取公网IP的地址, 可以换成其他的比如: bot.whatismyipaddress.com, https://api.ipify.org/ ...
-# 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的参数。当然，两者可以相同也可以其中一个不填（如果你用不着其中一项的话）
+# 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的参数。
 WANIPSITEV4="http://ipv4.icanhazip.com" 
 WANIPSITEV6="http://ipv6.icanhazip.com" 
 
 # 这个文件将会存储你的zoneid和recordid等信息，可以是绝对路径或者相对路径
-# 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的路径。当然，两者可以相同也可以其中一个不填（如果你用不着其中一项的话）
+# 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的路径。
 ID_FILEV4="cloudflare.v4.ids" 
 ID_FILEV6="cloudflare.v6.ids"
 
 # 这个文件将会在每一次IPv4地址变更后存储下当前IP，作为对比
-# 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的路径。当然，两者可以相同也可以其中一个不填（如果你用不着其中一项的话）
+# 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的路径。
 WAN_IP_FILEV4="ipv4.txt"
 WAN_IP_FILEV6="ipv6.txt"
 
