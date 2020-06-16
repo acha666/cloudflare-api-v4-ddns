@@ -9,7 +9,7 @@ curl https://raw.githubusercontent.com/acha666/cloudflare-api-v4-ddns/master/cf-
 ```
 或者通过我的博客下载（可能不会是最新版）
 ```shell
-curl \source\contents\cloudflare-api-v4-ddns\cf-v4-ddns.sh > /usr/local/bin/cf-ddns.sh && chmod +x /usr/local/bin/cf-ddns.sh
+curl https://acha666.cn/source/contents/cloudflare-api-v4-ddns/cf-v4-ddns.sh > /usr/local/bin/cf-ddns.sh && chmod +x /usr/local/bin/cf-ddns.sh
 ```
 在Windows环境下可以去我的[项目地址](https://github.com/acha666/cloudflare-api-v4-ddns "项目地址")直接下载
 然后打开这个脚本，需要手动配置的地方已经使用注释标出
@@ -79,7 +79,8 @@ LOG_FILEV6="cf_ddns.log"
 不过，如果你和我一样使用群晖,只需要在控制面板-计划任务中添加新项目，然后设置好时间就行
 ![](https://i.loli.net/2020/05/10/I2FOKQfpD9xkjlJ.png)
 ### 注意事项
-~~1.不能同时存在两个记录名相同的记录(比如一个example.com的A记录和example.com的MX记录)，会发生错误~~已经修复这个蛋疼的问题，现在有100个也没问题（话说哪里来的100种类型的记录啊= =）
+~~1.不能同时存在两个记录名相同的记录(比如一个example.com的A记录和example.com的MX记录)，会发生错误~~
+已经修复这个蛋疼的问题，现在有100个也没问题（话说哪里来的100种类型的记录啊= =）
 
 2.脚本只在群晖DSM和Centos环境下测试，不过Ubuntu之类的也应该可以跑吧
 
