@@ -46,8 +46,8 @@ FORCE=false
 
 # 用于获取公网IP的地址, 可以换成其他的比如: bot.whatismyipaddress.com, https://api.ipify.org/ ...
 # 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的参数。当然，两者可以相同也可以其中一个不填（如果你用不着其中一项的话）
-WANIPSITEV4="http://ipv4.icanhazip.com" 
-WANIPSITEV6="http://ipv6.icanhazip.com" 
+WANIPSITEV4="http://ip.03k.org" 
+WANIPSITEV6="http://ip6.03k.org" 
 
 # 这个文件将会存储你的zoneid和recordid等信息，可以是绝对路径或者相对路径
 # 请分别设置用于IPv4 DDNS 和 IPv6 DDNS 的路径。当然，两者可以相同也可以其中一个不填（如果你用不着其中一项的话）
